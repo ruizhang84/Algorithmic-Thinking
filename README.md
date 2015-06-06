@@ -7,7 +7,7 @@
 - Divide and conquer
 - Dynamic programming
 
-###project
+###Project
 - Degree distributions for graphs
 - Connected components and graph resilience
 - Closest pairs and clustering algorithms
