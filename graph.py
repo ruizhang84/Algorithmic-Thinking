@@ -34,7 +34,7 @@ def compute_in_degrees(digraph):
         num_degree[dummy_node] = 0
     for key in digraph:
         for node in digraph[key]:
-            num_degree[node] = num_degree.get(node,0) + 1
+            num_degree[node] += 1
     return num_degree
 
 def in_degree_distribution(digraph):
