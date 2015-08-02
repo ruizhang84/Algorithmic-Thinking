@@ -138,16 +138,14 @@ def compute_local_alignment(seq_x, seq_y, scoring_matrix, alignment_matrix):
                 align_y = seq_y[dummy_j-1] + align_y
                 align_x = '-' + align_x
                 dummy_j -= 1
-
-
-    return max_score, alignment_matrix[len(seq_x)][len(seq_y)], align_x, align_y
+    return max_score, align_x, align_y
 
 if __name__ == "__main__":
-    dict = build_scoring_matrix(set(['A', 'C', 'T', 'G']), 6, 2, -4)
+    dict = build_scoring_matrix(set(['A', 'C', 'T', 'G']), 10, 4, -6)
     print dict
     scoreT = compute_alignment_matrix('AA','TAAT', dict, True)
     score = compute_alignment_matrix('AA','TAAT', dict, False)
-    print score
+    print score[0][2], score[2][0], score[2][2]
     seq_x = 'AA'
     seq_y = 'TAAT'
     print compute_global_alignment(seq_x, seq_y, dict, scoreT)
